@@ -96,14 +96,17 @@ sumNumbers([]) //=> 0
 // Your solution for 03-sumNumbers here:
 
 const sumNumbers = (nums) => {
-  let total = 0;
-  if (nums === []) {
-    return total;
+  // let total = 0;
+  if (nums.length === 0) {
+    // return total;
+    return 0;
   }
-  for (let i = 0; i < nums.length; i ++) {
-    total += nums[i];
-  }
-  return total;
+  // for (let i = 0; i < nums.length; i ++) {
+  //   total += nums[i];
+  // }
+  // return total;
+  return nums.reduce((acc, num) => acc + num, 0);
+
 };
 
 
@@ -159,9 +162,12 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------------------*/
 // Your solution for 05-computeRemainder here:
 
-
-
-
+const computeRemainder = (num1, num2) => {
+  if (num2 === 0){return Infinity};
+  // return num1 % num2;
+  let quotient = Math.floor(num1 / num2);
+  return num1 - (quotient * num2);
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 06-range
@@ -187,7 +193,32 @@ range(5,2) //=> "First argument must be less than second"
 // Your solution for 06-range here:
 
 
+// recursion solution
+/* const range = (int1, int2) => {
+  let array = [];
 
+  if (int2 < int1) {
+    return "First argument must be less than second";
+  }
+
+  function recurse(num1, num2) {
+    if (num1 < num2) {
+      array.push(num1);
+      recurse(num1 +1, num2);
+    }
+  };
+  recurse(int1,int2);
+
+  return array;
+};
+ */
+
+const range = (int1, int2) => {
+  if (int2 < int1) {
+    return "First argument must be less than second";
+  }
+  return [...Array(int2 - int1)].map((_, i) => int1 +i);
+};
 
 
 /*-----------------------------------------------------------------------------
@@ -208,7 +239,9 @@ reverseUpcaseString("SEI Rocks!") //=> "!SKCOR IES"
 -----------------------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
-
+const reverseUpcaseString = (str) => {
+  return str.toUpperCase().reverse();
+};
 
 
 
