@@ -128,9 +128,13 @@ addList(7,-12) //=> -5
 -----------------------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
-
-
-
+const addList = (...numbers) => {
+  let total = 0;
+  for (num of numbers) {
+    total += num;
+  }
+  return total;
+};
 
 /*-----------------------------------------------------------------------------
 Challenge: 05-computeRemainder
