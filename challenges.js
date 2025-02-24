@@ -277,8 +277,6 @@ const removeEnds = (str) => {
   return str.slice(1,-1);
 };
 
-
-
 /*-----------------------------------------------------------------------------
 Challenge: 09-charCount
 
@@ -317,9 +315,20 @@ charCount('Today is fantastic!')
 -----------------------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
-
-
-
+const charCount = (str) => {
+  const characters = str.split("");
+  let tally = characters.reduce(function(acc, character) {
+    if (acc[character]) {
+      //adds to existing character count
+      acc[character] = acc[character] + 1;
+    } else {
+      //create new instance of character to store count
+      acc[character] = 1;
+    }
+    return acc;
+  },{});
+  return tally;
+};
 
 /*-----------------------------------------------------------------------------
 Challenge: 10-formatWithPadding
