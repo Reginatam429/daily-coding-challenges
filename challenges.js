@@ -375,8 +375,6 @@ const formatWithPadding = (num, str, numLength) => {
 
 };
 
-
-
 /*-----------------------------------------------------------------------------
 Challenge: 11-isPalindrome
 
@@ -402,7 +400,18 @@ isPalindrome('') //=> true
 // Your solution for 11-isPalindrome here:
 
 
+const isPalindrome = (str) => {
+let reversedStr = str.split("").reverse().join("").replaceAll(" ", "").toUpperCase();
+let spacelessStr = str.replaceAll(" ", "").toUpperCase();
+if (str.length === 0 || str.length === 1) {
+  return true;
+}
+if (reversedStr === spacelessStr) {
+  return true;
+}
+return false;
 
+}
 
 
 /*-----------------------------------------------------------------------------
