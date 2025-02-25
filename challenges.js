@@ -401,18 +401,16 @@ isPalindrome('') //=> true
 
 
 const isPalindrome = (str) => {
-let reversedStr = str.split("").reverse().join("").replaceAll(" ", "").toUpperCase();
-let spacelessStr = str.replaceAll(" ", "").toUpperCase();
-if (str.length === 0 || str.length === 1) {
-  return true;
+  let reversedStr = str.split("").reverse().join("").replaceAll(" ", "").toUpperCase();
+  let spacelessStr = str.replaceAll(" ", "").toUpperCase();
+  if (str.length === 0 || str.length === 1) {
+    return true;
+  }
+  if (reversedStr === spacelessStr) {
+    return true;
+  }
+  return false;
 }
-if (reversedStr === spacelessStr) {
-  return true;
-}
-return false;
-
-}
-
 
 /*-----------------------------------------------------------------------------
 Challenge: 12-hammingDistance
