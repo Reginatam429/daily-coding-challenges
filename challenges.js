@@ -510,6 +510,14 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ])
 // Your solution for 14-fromPairs here:
 
 
+const fromPairs = (pairs) => {
+  return pairs.reduce((acc, [key, value]) => {
+    acc[key] = value;  // Assign key-value pair to the accumulator object
+    return acc;        
+  }, {});
+};
+
+//fromPairs([ ["name", "Sam"], ["age", 24], ["name", "Sally"] ]);
 
 
 
