@@ -517,10 +517,6 @@ const fromPairs = (pairs) => {
   }, {});
 };
 
-//fromPairs([ ["name", "Sam"], ["age", 24], ["name", "Sally"] ]);
-
-
-
 /*-----------------------------------------------------------------------------
 Challenge: 15-mergeObjects
 
