@@ -544,9 +544,18 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44})
 -----------------------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
+/* const mergeObjects = (obj1, ...objects) => {
+  objects.forEach(obj => {
+    for (let key in obj) {
+      obj1[key] = obj[key]; 
+    }
+  });
+  return obj1; 
+}; */
 
-
-
+const mergeObjects = (obj1, ...objects) => {
+  return Object.assign(obj1, ...objects);
+};
 
 /*-----------------------------------------------------------------------------
 Challenge: 16-findHighestPriced
